@@ -41,7 +41,7 @@ iex(3)> add_item("Learn Elixir", pid)
 ```
 
 ```
-iex(4)> add_item("Learn Erlang")
+iex(4)> add_item("Learn Erlang", pid)
 
 > =====================
   Learn Elixir
@@ -50,10 +50,10 @@ iex(4)> add_item("Learn Erlang")
 
 ## delete_item/2
 
-Requires two arguments: ```delte_item(task, pid)```
+Requires two arguments: ```delete_item(task, pid)```
 
 ```
-iex(5)> delete_item("Learn Erlang")
+iex(5)> delete_item("Learn Erlang", pid)
 
 > =====================
   Learn Elixir
