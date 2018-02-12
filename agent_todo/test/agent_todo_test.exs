@@ -8,5 +8,8 @@ defmodule TODOTest do
 
     TODO.put(pid, "test")
     assert TODO.get(pid) == ["test"]
+  
+    TODO.delete(pid, "test")
+    assert TODO.get(pid) == []
   end
 end

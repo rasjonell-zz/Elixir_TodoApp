@@ -26,4 +26,13 @@ defmodule TODO do
     Agent.update(pid, &([task | &1]))
   end
 
+  @doc """
+  Deletes specified `task` from the state
+  """
+  def delete(pid, task) do
+    Agent.get_and_update(pid, fn list -> 
+      {:ok, List.delete(list, task)}
+    end)
+  end
+
 end
