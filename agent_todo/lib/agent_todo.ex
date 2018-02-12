@@ -8,8 +8,8 @@ defmodule TODO do
   @doc """
   Starts a new state-holding process
   """
-  def start_link(_opts) do
-    Agent.start_link(fn -> [] end)
+  def start_link(pid) do
+    Agent.start_link(fn -> [] end, name: pid)
   end
 
   @doc """

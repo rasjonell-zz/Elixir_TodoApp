@@ -3,13 +3,13 @@ defmodule TODOTest do
   doctest TODO
 
   test "stores new task in the state" do
-    {:ok, pid} = TODO.start_link([])
-    assert TODO.get(pid) == []
+    TODO.start_link(:todo)
+    assert TODO.get(:todo) == []
 
-    TODO.put(pid, "test")
-    assert TODO.get(pid) == ["test"]
+    TODO.put(:todo, "test")
+    assert TODO.get(:todo) == ["test"]
 
-    TODO.delete(pid, "test")
-    assert TODO.get(pid) == []
+    TODO.delete(:todo, "test")
+    assert TODO.get(:todo) == []
   end
 end

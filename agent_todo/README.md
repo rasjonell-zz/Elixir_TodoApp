@@ -21,12 +21,12 @@ iex(1)> import TODO, only: :functions
 
 ## Available commands
 
-All functions require ```pid``` as the first argument.
+All functions require an atom ```:name``` as the first argument.
 
-To get the PID of the TODO Agent type:
+To give a name to TODO Agent type:
 
 ```
-iex(2)> {:ok, pid} = start_link([])
+iex(2)> start_link(:todo) # :todo can be replaced with any atom.
 
 > {:ok, #PID<0.92.0>} # The #PID may differ
 ```
@@ -35,36 +35,36 @@ Currently available functions are: ```put/2```, ```delete/2```, ```get/1```
 
 ## put/2
 
-Requires two arguments: ```put(pid, task)```
+Requires two arguments: ```put(:name, task)```
 
 ```
-iex(3)> put(pid, "Learn Elixir")
+iex(3)> put(:todo, "Learn Elixir")
 
 > :ok
 ```
 
 ```
-iex(4)> put(pid, "Learn Erlang")
+iex(4)> put(:todo, "Learn Erlang")
 
 > :ok
 ```
 
 ## delete/2
 
-Requires two arguments: ```delete(pid, task)```
+Requires two arguments: ```delete(:name, task)```
 
 ```
-iex(5)> delete(pid, "Learn Erlang")
+iex(5)> delete(:todo, "Learn Erlang")
 
 > :ok
 ```
 
 ## get/1
 
-Requires one argument: ```get(pid)```
+Requires one argument: ```get(:name)```
 
 ```
-iex(6)> get(pid)
+iex(6)> get(:todo)
 
 > ["Learn Elixir"]
 ```
