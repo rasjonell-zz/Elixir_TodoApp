@@ -16,23 +16,22 @@ defmodule TODO do
   Gets the state
   """
   def get(pid) do
-    Agent.get(pid, &(&1))
+    Agent.get(pid, & &1)
   end
 
   @doc """
   Puts the new `task` in the state
   """
   def put(pid, task) do
-    Agent.update(pid, &([task | &1]))
+    Agent.update(pid, &[task | &1])
   end
 
   @doc """
   Deletes specified `task` from the state
   """
   def delete(pid, task) do
-    Agent.get_and_update(pid, fn list -> 
+    Agent.get_and_update(pid, fn list ->
       {:ok, List.delete(list, task)}
     end)
   end
-
 end

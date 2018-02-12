@@ -1,19 +1,6 @@
-# TODO
+# TODO with Elixir Processes
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `agent_todo` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:agent_todo, "~> 0.1.0"}
-  ]
-end
-```
+**TODO: Add GenServer Version**
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
